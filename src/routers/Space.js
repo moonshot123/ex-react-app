@@ -4,7 +4,7 @@ class Space extends Component{
     render(){
         return(
             <div>
-            
+            우주
             </div>
         )
     }

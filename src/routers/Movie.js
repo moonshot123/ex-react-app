@@ -4,7 +4,7 @@ class Movie extends Component{
     render(){
         return(
             <div>
-                
+                영화
             </div>
         )
     }
