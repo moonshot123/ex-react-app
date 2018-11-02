@@ -14,11 +14,14 @@ class Weather extends Component{
 
 
     //setstatus부분
-    _getweather = () => {
-        const weather = this._getweatherAPI()
+    _getweather = async () => {
+        const weather = await this._getweatherAPI()
+        console.log("API확인:"+weather)
         this.setState({
             weather
+            
         })
+        console.log("날씨 데이터 확인: "+weather)
 
     }
 
@@ -26,34 +29,35 @@ class Weather extends Component{
     _getweatherAPI = () =>{
         return fetch("http://api.openweathermap.org/data/2.5/forecast?q=seoul&APPID=3de5fec001b92fae36593d2280811511") 
           .then(weatherResponse => weatherResponse.json())
+          //.then(json => console.log(json))
           .then(json => json)
-          .catch(err => console.log(err))
-          
+          .catch(err => console.log(err))        
       }
       
       // 데이터를 weatherlist에 보내줘서 화면에 보여줌
-      _renderWeather =() =>{
+      _renderWeather = () =>{
         console.log("날씨 정보확인"+this.state.weather)
         console.log("날씨 정보확인2"+this.state.weather.list)
-        console.log("날씨 정보확인3"+this.state.weather.list)
-        //const weather = this.state.weather(){}
-         
-          return (
+        console.log("날씨 정보확인3(기온정보)"+this.state.weather.list[0].main.temp)
+        console.log("날씨 정보확인3(날씨정보)"+this.state.weather.list[0].weather[0].main)
+        return (
             <Weatherlist 
-            temp = {this.state.weather.list.main.temp}
-            main = {this.state.weather.list.weather.main}
+            temp = {this.state.weather.list[0].main.temp}
+            main = {this.state.weather.list[0].weather[0].main}
             />  
           )
+       
+         
       }
       
 
 
     render(){
         const {weather} = this.state
-        console.log()
-        return(
-            
+        return(            
             <div>
+            {console.log("renderdid")}
+            {console.log(weather)}
                 {weather ? this._renderWeather() : "LODING"}
             </div>
         )
