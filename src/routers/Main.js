@@ -5,10 +5,11 @@ class Main extends Component{
     render(){
         return(
 <div>
-    시작
+    <img src="./../../public/Image/Image1.png" alt="홈사진"/>
 </div>
         )
     }
 } 
+
 
 export default Main

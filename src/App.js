@@ -15,10 +15,10 @@ class App extends Component {
         <div className="">
         <div className="jumbotron">
             Hello react project here!<br/>
-            <Link to ="/"><button type="button" className="btn btn-primary">버튼1</button></Link>           
-            <Link to ="/weather"><button type="button" className="btn btn-primary">버튼2</button></Link>
-            <Link to ="/movie"><button type="button" className="btn btn-primary">버튼3</button></Link>
-            <Link to ="/space"><button type="button" className="btn btn-primary">버튼3</button></Link>           
+            <Link to ="/"><button type="button" className="btn btn-primary mainbutton">HOME</button></Link>           
+            <Link to ="/weather"><button type="button" className="btn btn-primary">오늘의 날씨</button></Link>
+            <Link to ="/movie"><button type="button" className="btn btn-primary">영화정보</button></Link>
+            <Link to ="/space"><button type="button" className="btn btn-primary">오늘의 사진</button></Link>           
         </div> 
         <Route exact path='/'component={Main}/>
         <Route path='/weather'component={Weather}/>
