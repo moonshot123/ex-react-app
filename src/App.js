@@ -14,7 +14,8 @@ class App extends Component {
         <Router>
         <div className="">
         <div className="jumbotron">
-            Hello react project here!<br/>
+            HELLO REACT API PROJECT<br/><br/>
+            <a href="https://github.com/moonshot123/ex-react-app"> 깃허브링크 </a>   <br/><br/>
             <Link to ="/"><button type="button" className="btn btn-primary mainbutton">HOME</button></Link>           
             <Link to ="/weather"><button type="button" className="btn btn-primary">오늘의 날씨</button></Link>
             <Link to ="/movie"><button type="button" className="btn btn-primary">영화정보</button></Link>
